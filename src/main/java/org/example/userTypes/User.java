@@ -1,25 +1,24 @@
 package org.example.userTypes;
 
+import org.example.*;
+
 import java.util.Objects;
 
 public class User {
     private String name;
     private String surname;
     private int age;
-    private int city;
+    private String city;
 
-    public User(String name, String surname, int age) {
+    public User(String name, String surname, int age, String city) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.city = city;
     }
 
-    public User(String name, String surname, int age, int city) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.city = city;
+    public User() {
+
     }
 
     public String getName() {
@@ -46,8 +45,12 @@ public class User {
         this.age = age;
     }
 
-    public int getCity() {
+    public String getCity() {
         return city;
+    }
+    public void setCity(String city) {
+        this.city = city;
+
     }
 
     @Override
@@ -61,11 +64,6 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(name, surname, age, city);
-    }
-
-    public void setCity(int city) {
-        this.city = city;
-
     }
 
     @Override
