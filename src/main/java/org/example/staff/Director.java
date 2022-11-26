@@ -1,0 +1,61 @@
+package org.example.staff;
+
+import java.util.Objects;
+
+public class Director {
+    private String name;
+    private String surname;
+    private int age;
+
+    public Director(String name, String surname, int age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Director director = (Director) o;
+        return age == director.age && name.equals(director.name) && surname.equals(director.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, age);
+    }
+
+    @Override
+    public String toString() {
+        return "Director{" +
+                "Name='" + name + '\'' +
+                ", Surname='" + surname + '\'' +
+                ", Age=" + age +
+                '}';
+    }
+}
