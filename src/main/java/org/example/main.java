@@ -10,6 +10,7 @@ public class main {
     public static void main(String args[])
     {
         User firstUser = new User("Dmytro", "Savchenko", 18, "Kyiv");
+        BankCard bankCard = new BankCard("Dmytro", "Savchenko", 100000000, "0226", 456);
         Product laptop = new Product("laptop", 21.5);
         Product laptop2 = new Product("laptop2", 22.5);
         List<Product> laptops = new ArrayList<>();
@@ -18,16 +19,10 @@ public class main {
         Basket user1Basket = new Basket();
         user1Basket.setBasket(laptops);
         user1Basket.addProduct(laptop);
-        for (Product product: user1Basket.getBasket()) {
-            System.out.println(product);
-        }
         Wishlist wishList = new Wishlist(laptops);
         wishList.addProductToBasket(user1Basket, wishList.getWishlist().get(1));
-        /*System.out.println("112322222222222222222222222222222");
-        for (Product product: user1Basket.getBasket()) {
-            System.out.println(product);
-        }*/
         Order firstOrder = new Order(firstUser, "Metalistiv", 5, 173, 39622, 635575702, user1Basket);
-        System.out.println(firstOrder);
+        Receipt receipt = new Receipt(firstOrder, bankCard);
+        System.out.println(receipt.createReceipt(receipt, firstOrder));
     }
 }
