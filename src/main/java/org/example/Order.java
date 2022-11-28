@@ -1,7 +1,5 @@
 package org.example;
 
-
-
 import org.example.products.Product;
 import org.example.userTypes.User;
 

@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.products.Category;
 import org.example.products.Product;
 import org.example.userTypes.User;
 
@@ -24,5 +25,8 @@ public class main {
         Order firstOrder = new Order(firstUser, "Metalistiv", 5, 173, 39622, 635575702, user1Basket);
         Receipt receipt = new Receipt(firstOrder, bankCard);
         System.out.println(receipt.createReceipt(receipt, firstOrder));
+        Category laptopsCategory = new Category();
+        laptopsCategory.setCategory(laptops);
+        System.out.println(laptopsCategory);
     }
 }

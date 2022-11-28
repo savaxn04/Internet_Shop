@@ -1,6 +1,10 @@
 package org.example;
 
-public class Shop {
+import org.example.staff.Director;
+
+import java.util.Objects;
+
+public class Shop{
     private String name;
     private String type;
 
@@ -23,5 +27,25 @@ public class Shop {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Shop shop)) return false;
+        return name.equals(shop.name) && type.equals(shop.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, type);
+    }
+
+    @Override
+    public String toString() {
+        return "Shop{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
