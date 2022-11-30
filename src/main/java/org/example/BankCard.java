@@ -24,28 +24,40 @@ public class BankCard {
         return userName;
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public String getUserSurname() {
         return userSurname;
+    }
+
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
     }
 
     public long getCardNumber() {
         return cardNumber;
     }
 
+    public void setCardNumber(long cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
     public String getYearMonth() {
         return yearMonth;
+    }
+
+    public void setYearMonth(String yearMonth) {
+        this.yearMonth = String.valueOf(YearMonth.parse(yearMonth, DateTimeFormatter.ofPattern("MMyy").withZone(ZoneId.of("UTC"))));
     }
 
     public int getCvv() {
         return cvv;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public void setUserSurname(String userSurname) {
-        this.userSurname = userSurname;
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
     }
 
     @Override

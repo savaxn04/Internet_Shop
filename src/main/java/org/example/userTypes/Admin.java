@@ -1,49 +1,28 @@
 package org.example.userTypes;
 
+import org.example.Role;
+
 import java.util.Objects;
 
-public class Admin {
-    private String name;
-    private String surname;
-
-    public Admin(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+public class Admin extends User {
+    public void blockUser(User user){
+        if(user.getRole() != Role.ADMIN){
+            throw new IllegalArgumentException("It is impossible to change the administrator status ");
+        }
+        user.setStatus("Block");
     }
 
-    public String getName() {
-        return name;
+    public void unblockUser(User user){
+        if(user.getRole() != Role.ADMIN){
+            throw new IllegalArgumentException("It is impossible to change the administrator status ");
+        }
+        user.setStatus("Unblock");
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Admin() {
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Admin admin)) return false;
-        return name.equals(admin.name) && surname.equals(admin.surname);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, surname);
-    }
-
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
+    public Admin(String name, String surname, String status) {
+        super(name, surname, status,Role.ADMIN);
     }
 }

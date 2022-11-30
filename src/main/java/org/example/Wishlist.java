@@ -25,6 +25,7 @@ public class Wishlist {
     }
 
     public Wishlist() {
+
     }
 
     public Wishlist(List<Product> basket) {

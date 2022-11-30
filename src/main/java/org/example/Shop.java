@@ -1,12 +1,21 @@
 package org.example;
 
+import org.example.staff.Department;
 import org.example.staff.Director;
 
+import java.util.List;
 import java.util.Objects;
 
-public class Shop{
+public class Shop {
     private String name;
     private String type;
+
+    public List<Department> getDepartments(List<Department> departments){
+        return departments;
+    }
+
+    public Shop() {
+    }
 
     public Shop(String name, String type) {
         this.name = name;

@@ -1,7 +1,5 @@
 package org.example;
 
-import org.example.userTypes.User;
-
 import java.util.Objects;
 
 public class Receipt{

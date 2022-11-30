@@ -18,19 +18,30 @@ public class Department {
         consultantList.add(consultant);
     }
 
+    public void removeManager(Manager manager){
+        managerList.remove(manager);
+    }
+
+    public void removeConsultant(Consultant consultant){
+        consultantList.remove(consultant);
+    }
+
     public Department(String name, List<Manager> managerList, List<Consultant> consultantList) {
         this.name = name;
         this.managerList = managerList;
         this.consultantList = consultantList;
     }
 
-    public Department(String name, List<Manager> managerList) {
+    public Department(String name) {
         this.name = name;
-        this.managerList = managerList;
     }
 
     public void setConsultantManager(List<Consultant> consultantList) {
         this.consultantList = consultantList;
+    }
+
+    public void setManagerList(List<Manager> managerList) {
+        this.managerList = managerList;
     }
 
     public String getName() {
@@ -41,12 +52,8 @@ public class Department {
         return managerList;
     }
 
-    public List<Consultant> getconsultantList() {
+    public List<Consultant> getConsultantList() {
         return consultantList;
-    }
-
-    public void setManagerList(List<Manager> managerList) {
-        this.managerList = managerList;
     }
 
     @Override

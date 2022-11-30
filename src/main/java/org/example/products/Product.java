@@ -7,27 +7,34 @@ import java.util.Objects;
 public class Product {
     private String name;
     private double price;
-    List<Product> products;
+    private int count;
+    private String description;
+    private String type;
 
-    public List<Product> getProducts() {
-        return products;
+    public Product() {
     }
-    public Product(List<Product> products) {
-        this.products = products;
-    }
-    public Product(String name, double price) {
+
+    public Product(String name, double price, int count, String description, String type) {
         this.name = name;
-        this.price = price;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
+        if(price <= 0){
+            throw new IllegalArgumentException("price of product can't be <= then 0");
+        }
+        else{
+            this.price = price;
+        }
+        if(count <= 0){
+            throw new IllegalArgumentException("Count of product can't be <= then 0");
+        }
+        else{
+            this.count = count;
+        }
+        this.description = description;
+        this.type = type;
     }
 
     public String getName() {
         return name;
     }
-
 
     public void setName(String name) {
         this.name = name;
@@ -38,27 +45,40 @@ public class Product {
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        if(price <= 0){
+            throw new IllegalArgumentException("price of product can't be <= then 0");
+        }
+        else{
+            this.price = price;
+        }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 && name.equals(product.name) && Objects.equals(products, product.products);
+    public int getCount() {
+        return count;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, price, products);
+    public void setCount(int count) {
+        if(count <= 0){
+            throw new IllegalArgumentException("Count of product can't be <= then 0");
+        }
+        else{
+            this.count = count;
+        }
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                '}';
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

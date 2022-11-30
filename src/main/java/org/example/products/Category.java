@@ -5,13 +5,12 @@ import java.util.Objects;
 
 public class Category {
     private List<Product> category;
-
     public void addProduct(Product product){
         category.add(product);
     }
+    public void removeProduct(Product product){category.remove(product);}
 
     public Category() {
-
     }
 
     public Category(List<Product> category) {
