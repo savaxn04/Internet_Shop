@@ -12,7 +12,7 @@ public class Basket {
         basket.add(product);
     }
 
-    public double totalPrice(){
+    public double totalPrice() throws BasketIsNullException {
         double totalPrice = 0;
         for (Product product : basket) {
             totalPrice += product.getPrice();

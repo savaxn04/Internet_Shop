@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exceptions.BasketIsNullException;
 import org.example.exceptions.UserIsBlockException;
 import org.example.products.Product;
 import org.example.userTypes.Customer;
@@ -19,7 +20,7 @@ public class Order extends Basket {
     private int phoneNumber;
     private Basket basketList;
 
-    public double totalPrice(){
+    public double totalPrice() throws BasketIsNullException {
         double totalPrice = 0;
         for (Product product : basketList.getBasket()) {
             totalPrice += product.getPrice();
@@ -99,8 +100,13 @@ public class Order extends Basket {
         return phoneNumber;
     }
 
-    public List<Product> getBasket() {
-        return basketList.getBasket();
+    public List<Product> getBasket() throws BasketIsNullException {
+        if(basketList != null){
+            return basketList.getBasket();
+        }
+        else{
+            throw new BasketIsNullException("Basket is null");
+        }
     }
 
     @Override
