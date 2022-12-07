@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exceptions.BasketIsNullException;
 import org.example.exceptions.NameAndSurnameNotMatchWithCardException;
 
 import java.util.Objects;
@@ -7,7 +8,7 @@ import java.util.Objects;
 public class Receipt{
     private final BankCard bankCard;
 
-    public String createReceipt(Receipt receipt, Order order){
+    public String createReceipt(Receipt receipt, Order order) throws BasketIsNullException {
         return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + order.getBasket() + ".\n" + "Total price is: " + order.totalPrice();
     }
 

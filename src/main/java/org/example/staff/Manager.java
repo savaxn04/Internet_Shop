@@ -3,8 +3,6 @@ package org.example.staff;
 import org.example.products.Category;
 import org.example.products.Product;
 
-import java.util.Objects;
-
 public class Manager extends Employee implements IEmployeeAction{
     private String department;
 
