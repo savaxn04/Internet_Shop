@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exceptions.BasketIsNullException;
 import org.example.products.Product;
 
 import java.util.List;
@@ -26,9 +27,9 @@ public class Basket {
         this.basket = basket;
     }
 
-    public List<Product> getBasket() {
+    public List<Product> getBasket() throws BasketIsNullException {
         if(basket == null){
-            throw new NullPointerException(
+            throw new BasketIsNullException(
                     "The provided basket was null. You need to add the product to the basket.");
         }
         return basket;

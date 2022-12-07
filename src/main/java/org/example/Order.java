@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exceptions.UserIsBlockException;
 import org.example.products.Product;
 import org.example.userTypes.Customer;
 

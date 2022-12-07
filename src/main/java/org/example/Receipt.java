@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.exceptions.NameAndSurnameNotMatchWithCardException;
+
 import java.util.Objects;
 
 public class Receipt{
@@ -9,9 +11,9 @@ public class Receipt{
         return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + order.getBasket() + ".\n" + "Total price is: " + order.totalPrice();
     }
 
-    public Receipt(Order order, BankCard bankCard) {
+    public Receipt(Order order, BankCard bankCard) throws NameAndSurnameNotMatchWithCardException {
         if(!order.getName().equals(bankCard.getUserName()) && !order.getSurname().equals(bankCard.getUserSurname())){
-            throw new IllegalArgumentException("Enter valid Name and Surname");
+            throw new NameAndSurnameNotMatchWithCardException("Enter valid Name and Surname");
         } else {
             this.bankCard = bankCard;
         }

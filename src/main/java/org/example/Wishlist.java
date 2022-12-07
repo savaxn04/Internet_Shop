@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exceptions.WishListIsNullException;
 import org.example.products.Product;
 
 import java.util.List;
@@ -32,10 +33,9 @@ public class Wishlist {
         this.wishlist = basket;
     }
 
-    public List<Product> getWishlist() {
+    public List<Product> getWishlist() throws WishListIsNullException {
         if(wishlist == null){
-            throw new NullPointerException(
-                    "The provided wishlist was null. You need to add the product to the wishlist.");
+            throw new WishListIsNullException("Wishlist is null");
         }
         return wishlist;
     }

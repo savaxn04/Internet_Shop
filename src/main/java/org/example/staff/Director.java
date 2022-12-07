@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class Director extends Employee {
+
+    public Department createDepartment(String name){
+        return new Department(name);
+    }
+
     public Director() {
     }
 

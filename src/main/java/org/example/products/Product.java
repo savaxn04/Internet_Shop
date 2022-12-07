@@ -81,4 +81,27 @@ public class Product {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product product)) return false;
+        return Double.compare(product.price, price) == 0 && count == product.count && name.equals(product.name) && description.equals(product.description) && type.equals(product.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, count, description, type);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", count=" + count +
+                ", description='" + description + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
