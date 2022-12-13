@@ -1,5 +1,6 @@
-package org.example;
+package org.example.order;
 
+import org.example.userStorage.Basket;
 import org.example.exceptions.BasketIsNullException;
 import org.example.exceptions.UserIsBlockException;
 import org.example.products.Product;

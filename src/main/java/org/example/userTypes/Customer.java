@@ -1,8 +1,7 @@
 package org.example.userTypes;
 
-import org.example.Role;
+import org.example.enums.Role;
 
-import java.util.Map;
 import java.util.Objects;
 
 public class Customer extends User {

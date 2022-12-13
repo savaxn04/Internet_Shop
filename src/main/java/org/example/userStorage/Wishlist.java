@@ -1,4 +1,4 @@
-package org.example;
+package org.example.userStorage;
 
 import org.example.exceptions.WishListIsNullException;
 import org.example.products.Product;

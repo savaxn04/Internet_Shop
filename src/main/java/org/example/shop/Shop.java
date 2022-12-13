@@ -1,7 +1,6 @@
-package org.example;
+package org.example.shop;
 
 import org.example.staff.Department;
-import org.example.staff.Director;
 
 import java.util.List;
 import java.util.Objects;

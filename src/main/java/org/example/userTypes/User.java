@@ -1,6 +1,6 @@
 package org.example.userTypes;
 
-import org.example.Role;
+import org.example.enums.Role;
 
 import java.util.Objects;
 

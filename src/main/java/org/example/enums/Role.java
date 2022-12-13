@@ -1,14 +1,11 @@
-package org.example;
+package org.example.enums;
 
 public enum Role {
     CUSTOMER(1), SELLER(2),  ADMIN(3);
-
-    private int value;
-
+    private final int value;
     Role(int i) {
         this.value = i;
     }
-
     public int getValue() {
         return value;
     }

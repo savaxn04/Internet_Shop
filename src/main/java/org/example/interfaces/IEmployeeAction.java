@@ -1,4 +1,4 @@
-package org.example.staff;
+package org.example.interfaces;
 
 import org.example.products.Category;
 import org.example.products.Product;

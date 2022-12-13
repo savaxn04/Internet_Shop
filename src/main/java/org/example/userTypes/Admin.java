@@ -1,9 +1,7 @@
 package org.example.userTypes;
 
-import org.example.Role;
+import org.example.enums.Role;
 import org.example.exceptions.*;
-
-import java.util.Objects;
 
 public class Admin extends User {
     public void blockUser(User user) throws ChangeAdministratorStatusException {

@@ -1,9 +1,10 @@
 package org.example.staff;
 
+import org.example.interfaces.IEmployeeAction;
 import org.example.products.Category;
 import org.example.products.Product;
 
-public class Manager extends Employee implements IEmployeeAction{
+public class Manager extends Employee implements IEmployeeAction {
     private String department;
 
     public boolean checkProductInCategory(Product product, Category category) {

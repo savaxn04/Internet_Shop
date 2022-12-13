@@ -1,7 +1,9 @@
-package org.example;
+package org.example.receipt;
 
+import org.example.bankCard.BankCard;
 import org.example.exceptions.BasketIsNullException;
 import org.example.exceptions.NameAndSurnameNotMatchWithCardException;
+import org.example.order.Order;
 
 import java.util.Objects;
 
