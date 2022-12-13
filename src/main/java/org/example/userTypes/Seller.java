@@ -30,8 +30,8 @@ public class Seller extends User{
     public Seller() {
     }
 
-    public Seller(String name, String surname, String status,List<Product> sellerProducts) {
-        super(name, surname, status, Role.SELLER);
+    public Seller(String name, String surname,List<Product> sellerProducts) {
+        super(name, surname, Role.SELLER);
         this.sellerProducts = sellerProducts;
     }
 
@@ -41,5 +41,24 @@ public class Seller extends User{
 
     public void setSellerProducts(List<Product> sellerProducts) {
         this.sellerProducts = sellerProducts;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Seller seller)) return false;
+        return Objects.equals(sellerProducts, seller.sellerProducts);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sellerProducts);
+    }
+
+    @Override
+    public String toString() {
+        return "Seller{" + super.toString() +
+                ", sellerProducts=" + sellerProducts +
+                '}' ;
     }
 }

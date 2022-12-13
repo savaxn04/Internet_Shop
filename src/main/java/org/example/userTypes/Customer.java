@@ -14,8 +14,8 @@ public class Customer extends User {
 
     }
 
-    public Customer(String name, String surname, String status, int age, String city) {
-        super(name, surname, status,Role.CUSTOMER);
+    public Customer(String name, String surname, int age, String city) {
+        super(name, surname,Role.CUSTOMER);
         this.age = age;
         this.city = city;
     }
@@ -42,5 +42,26 @@ public class Customer extends User {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Customer customer)) return false;
+        return age == customer.age && city.equals(customer.city) && Objects.equals(question, customer.question);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, city, question);
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" + super.toString() +
+                " ,age=" + age +
+                ", city='" + city + '\'' +
+                ", question='" + question + '\'' +
+                '}';
     }
 }

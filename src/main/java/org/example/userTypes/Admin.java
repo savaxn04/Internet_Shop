@@ -23,7 +23,12 @@ public class Admin extends User {
     public Admin() {
     }
 
-    public Admin(String name, String surname, String status) {
-        super(name, surname, status,Role.ADMIN);
+    public Admin(String name, String surname) {
+        super(name, surname,Role.ADMIN);
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" + super.toString() + "}";
     }
 }
