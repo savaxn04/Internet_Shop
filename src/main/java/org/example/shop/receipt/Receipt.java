@@ -1,16 +1,16 @@
-package org.example.receipt;
+package org.example.shop.receipt;
 
-import org.example.bankCard.BankCard;
-import org.example.exceptions.BasketIsNullException;
+import org.example.shop.bankCard.BankCard;
+import org.example.exceptions.UserStorageIsNullException;
 import org.example.exceptions.NameAndSurnameNotMatchWithCardException;
-import org.example.order.Order;
+import org.example.shop.order.Order;
 
 import java.util.Objects;
 
 public class Receipt{
     private final BankCard bankCard;
 
-    public String createReceipt(Receipt receipt, Order order) throws BasketIsNullException {
+    public String createReceipt(Receipt receipt, Order order) throws UserStorageIsNullException {
         return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + order.getBasket() + ".\n" + "Total price is: " + order.totalPrice();
     }
 

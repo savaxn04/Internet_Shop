@@ -1,6 +1,4 @@
-package org.example.staff;
-
-import org.example.products.Product;
+package org.example.shop.person.staff;
 
 import java.util.List;
 import java.util.Objects;
@@ -76,5 +74,4 @@ public class Department {
                 ", consultantManager=" + consultantList +
                 '}';
     }
-
 }

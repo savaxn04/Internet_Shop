@@ -1,15 +1,15 @@
-package org.example.order;
+package org.example.shop.order;
 
-import org.example.userStorage.Basket;
-import org.example.exceptions.BasketIsNullException;
-import org.example.exceptions.UserIsBlockException;
-import org.example.products.Product;
-import org.example.userTypes.Customer;
+import org.example.shop.person.userTypes.Customer;
+import org.example.shop.userStorage.Basket;
+import org.example.exceptions.UserStorageIsNullException;
+import org.example.exceptions.UserBlockException;
+import org.example.shop.products.Product;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Order extends Basket {
+public class Order {
     private String name;
     private String surname;
     private int age;
@@ -21,7 +21,7 @@ public class Order extends Basket {
     private int phoneNumber;
     private Basket basketList;
 
-    public double totalPrice() throws BasketIsNullException {
+    public double totalPrice() throws UserStorageIsNullException {
         double totalPrice = 0;
         for (Product product : basketList.getBasket()) {
             totalPrice += product.getPrice();
@@ -29,26 +29,26 @@ public class Order extends Basket {
         return totalPrice;
     }
 
-    public Order(Customer customer, String street, int houseNumber, int postIndex, int phoneNumber, Basket basketList) throws UserIsBlockException {
+    public Order(Customer customer, Basket basketList) throws UserBlockException {
         if(customer.getStatus().equals("block")){
-            throw new UserIsBlockException("The user has the status of blocking by the administrator");
+            throw new UserBlockException("The user has the status of blocking by the administrator");
         }
         else {
             this.name = customer.getName();
             this.surname = customer.getSurname();
             this.age = customer.getAge();
             this.city = customer.getCity();
-            this.street = street;
-            this.houseNumber = houseNumber;
-            this.postIndex = postIndex;
-            this.phoneNumber = phoneNumber;
+            this.street = customer.getCity();
+            this.houseNumber = customer.getHouseNumber();
+            this.postIndex = customer.getPostIndex();
+            this.phoneNumber = customer.getPhoneNumber();
             this.basketList = basketList;
         }
 
     }
-    public Order(Customer customer, String street, int houseNumber, int numberPostOffice, int postIndex, int phoneNumber, Basket basketList) throws UserIsBlockException {
+    public Order(Customer customer, String street, int houseNumber, int numberPostOffice, int postIndex, int phoneNumber, Basket basketList) throws UserBlockException {
         if(customer.getStatus().equals("block")){
-            throw new UserIsBlockException("The user has the status of blocking by the administrator");
+            throw new UserBlockException("The user has the status of blocking by the administrator");
         }
         else{
             this.name = customer.getName();
@@ -101,12 +101,12 @@ public class Order extends Basket {
         return phoneNumber;
     }
 
-    public List<Product> getBasket() throws BasketIsNullException {
+    public List<Product> getBasket() throws UserStorageIsNullException {
         if(basketList != null){
             return basketList.getBasket();
         }
         else{
-            throw new BasketIsNullException("Basket is null");
+            throw new UserStorageIsNullException("Basket is null");
         }
     }
 

@@ -1,4 +1,4 @@
-package org.example.bankCard;
+package org.example.shop.bankCard;
 
 import java.time.YearMonth;
 import java.time.ZoneId;

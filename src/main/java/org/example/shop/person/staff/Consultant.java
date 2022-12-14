@@ -1,15 +1,16 @@
-package org.example.staff;
+package org.example.shop.person.staff;
 
-import org.example.interfaces.IEmployeeAction;
-import org.example.products.Category;
-import org.example.products.Product;
+import org.example.interfaces.IEmployeeCheckProductInCategory;
+import org.example.shop.person.Person;
+import org.example.shop.products.Category;
+import org.example.shop.products.Product;
 
-public class Consultant extends Employee implements IEmployeeAction {
+public class Consultant extends Person implements IEmployeeCheckProductInCategory {
     private String department;
 
     @Override
     public boolean checkProductInCategory(Product product, Category category) {
-        return IEmployeeAction.super.checkProductInCategory(product, category);
+        return IEmployeeCheckProductInCategory.super.checkProductInCategory(product, category);
     }
 
     public Consultant() {

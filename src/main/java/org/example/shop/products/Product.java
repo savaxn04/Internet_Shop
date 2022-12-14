@@ -1,7 +1,5 @@
-package org.example.products;
+package org.example.shop.products;
 
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Objects;
 
 public class Product {

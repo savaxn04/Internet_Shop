@@ -1,12 +1,13 @@
-package org.example.userStorage;
+package org.example.shop.userStorage;
 
-import org.example.exceptions.WishListIsNullException;
-import org.example.products.Product;
+import org.example.exceptions.UserStorageIsNullException;
+import org.example.interfaces.ITotalProductsPrice;
+import org.example.shop.products.Product;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Wishlist {
+public class Wishlist implements ITotalProductsPrice {
     private List<Product> wishlist;
 
     public void addProduct(Product product){
@@ -17,6 +18,7 @@ public class Wishlist {
         basket.addProduct(product);
     }
 
+    @Override
     public double totalPrice(){
         double totalPrice = 0;
         for (Product product : wishlist) {
@@ -33,9 +35,9 @@ public class Wishlist {
         this.wishlist = basket;
     }
 
-    public List<Product> getWishlist() throws WishListIsNullException {
+    public List<Product> getWishlist() throws UserStorageIsNullException {
         if(wishlist == null){
-            throw new WishListIsNullException("Wishlist is null");
+            throw new UserStorageIsNullException("Wishlist is null");
         }
         return wishlist;
     }

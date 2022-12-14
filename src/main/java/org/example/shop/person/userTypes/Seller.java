@@ -1,12 +1,13 @@
-package org.example.userTypes;
+package org.example.shop.person.userTypes;
 
 import org.example.enums.Role;
-import org.example.products.Product;
+import org.example.shop.products.Product;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Seller extends User{
+public class Seller extends User {
+
     private List<Product> sellerProducts;
 
     public void addProducts(Product product){
@@ -30,8 +31,8 @@ public class Seller extends User{
     public Seller() {
     }
 
-    public Seller(String name, String surname,List<Product> sellerProducts) {
-        super(name, surname, Role.SELLER);
+    public Seller(String name, String surname, Role role, String status, List<Product> sellerProducts) {
+        super(name, surname, role, status);
         this.sellerProducts = sellerProducts;
     }
 
