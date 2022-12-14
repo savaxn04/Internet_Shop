@@ -3,19 +3,32 @@ package org.example.shop.receipt;
 import org.example.shop.bankCard.BankCard;
 import org.example.exceptions.UserStorageIsNullException;
 import org.example.exceptions.NameAndSurnameNotMatchWithCardException;
-import org.example.shop.order.Order;
+import org.example.shop.order.OrderToHome;
+import org.example.shop.order.OrderToPostOffice;
 
 import java.util.Objects;
 
-public class Receipt{
+public class Receipt {
     private final BankCard bankCard;
 
-    public String createReceipt(Receipt receipt, Order order) throws UserStorageIsNullException {
-        return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + order.getBasket() + ".\n" + "Total price is: " + order.totalPrice();
+    public String createReceipt(Receipt receipt, OrderToHome orderToHome) throws UserStorageIsNullException {
+        return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + orderToHome.getCustomerBasketList() + ".\n" + "Total price is: " + orderToHome.totalPrice();
     }
 
-    public Receipt(Order order, BankCard bankCard) throws NameAndSurnameNotMatchWithCardException {
-        if(!order.getName().equals(bankCard.getUserName()) && !order.getSurname().equals(bankCard.getUserSurname())){
+    public String createReceipt(Receipt receipt, OrderToPostOffice orderToPostOffice) throws UserStorageIsNullException {
+        return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + orderToPostOffice.getCustomerBasketList() + ".\n" + "Total price is: " + orderToPostOffice.totalPrice();
+    }
+
+    public Receipt(OrderToHome orderToHome, BankCard bankCard) throws NameAndSurnameNotMatchWithCardException {
+        if(!orderToHome.getCustomerName().equals(bankCard.getUserName()) && !orderToHome.getCustomerSurname().equals(bankCard.getUserSurname())){
+            throw new NameAndSurnameNotMatchWithCardException("Enter valid Name and Surname");
+        } else {
+            this.bankCard = bankCard;
+        }
+    }
+
+    public Receipt(OrderToPostOffice orderToPostOffice, BankCard bankCard) throws NameAndSurnameNotMatchWithCardException {
+        if(!orderToPostOffice.getCustomerName().equals(bankCard.getUserName()) && !orderToPostOffice.getCustomerSurname().equals(bankCard.getUserSurname())){
             throw new NameAndSurnameNotMatchWithCardException("Enter valid Name and Surname");
         } else {
             this.bankCard = bankCard;
