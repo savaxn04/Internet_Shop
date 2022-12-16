@@ -1,5 +1,6 @@
 package org.example.shop.order;
 
+import org.example.enums.UserStatus;
 import org.example.exceptions.UserBlockException;
 import org.example.interfaces.ITotalProductsPrice;
 import org.example.shop.person.userTypes.Customer;
@@ -13,7 +14,7 @@ public class OrderToHome extends Order implements ITotalProductsPrice {
 
     public OrderToHome(Customer customer, Basket customerBasketList) throws UserBlockException {
         super(customer, customerBasketList);
-        if(customer.getStatus().equals("block")){
+        if(customer.getStatus().equals(UserStatus.BLOCK)){
             throw new UserBlockException("The user has the status of blocking by the administrator");
         }
             this.customerStreet = customer.getStreet();

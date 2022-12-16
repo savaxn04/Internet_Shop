@@ -8,11 +8,6 @@ import org.example.shop.products.Product;
 public class Consultant extends Person implements IEmployeeCheckProductInCategory {
     private String department;
 
-    @Override
-    public boolean checkProductInCategory(Product product, Category category) {
-        return IEmployeeCheckProductInCategory.super.checkProductInCategory(product, category);
-    }
-
     public Consultant() {
     }
 
@@ -27,5 +22,10 @@ public class Consultant extends Person implements IEmployeeCheckProductInCategor
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    @Override
+    public boolean checkProductInCategory(Product product, Category category) {
+        return category.getCategory().contains(product);
     }
 }
