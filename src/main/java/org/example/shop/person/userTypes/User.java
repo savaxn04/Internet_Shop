@@ -1,21 +1,22 @@
 package org.example.shop.person.userTypes;
 
 import org.example.enums.Role;
+import org.example.enums.UserStatus;
 import org.example.shop.person.Person;
 
 import java.util.Objects;
 
 public abstract class User extends Person {
     private Role role;
-    private String status;
+    private UserStatus status;
 
     public User() {
     }
 
-    public User(String name, String surname, Role role, String status) {
+    public User(String name, String surname, Role role, UserStatus status) {
         super(name, surname);
         this.role = role;
-        this.status = "User";
+        this.status = status;
     }
 
     public Role getRole() {
@@ -26,11 +27,11 @@ public abstract class User extends Person {
         this.role = role;
     }
 
-    public String getStatus() {
+    public UserStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(UserStatus status) {
         this.status = status;
     }
 

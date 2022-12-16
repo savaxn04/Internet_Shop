@@ -1,13 +1,10 @@
 package org.example.shop.order;
 
+import org.example.exceptions.UserBlockException;
 import org.example.interfaces.ITotalProductsPrice;
 import org.example.shop.person.userTypes.Customer;
 import org.example.shop.userStorage.Basket;
-import org.example.exceptions.UserStorageIsNullException;
-import org.example.exceptions.UserBlockException;
-import org.example.shop.products.Product;
 
-import java.util.List;
 import java.util.Objects;
 
 public class OrderToHome extends Order implements ITotalProductsPrice {
