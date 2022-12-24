@@ -11,7 +11,7 @@ import org.example.shop.userStorage.Basket;
 import java.util.Objects;
 
 public class OrderToHome extends Order implements ITotalProductsPrice {
-    private static final Logger logger = LogManager.getLogger(OrderToHome.class);
+    private static final Logger LOGGER = LogManager.getLogger(OrderToHome.class);
     private String customerStreet;
     private int customerHouseNumber;
 
@@ -22,7 +22,7 @@ public class OrderToHome extends Order implements ITotalProductsPrice {
         }
             this.customerStreet = customer.getStreet();
             this.customerHouseNumber = customer.getHouseNumber();
-        logger.info("Order to home created");
+        LOGGER.info("Order to home created");
     }
 
     public String getCustomerStreet() {

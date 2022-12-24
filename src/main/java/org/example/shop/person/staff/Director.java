@@ -6,10 +6,10 @@ import org.example.main;
 import org.example.shop.person.Person;
 
 public class Director extends Person {
-    private static final Logger logger = LogManager.getLogger(Director.class);
+    private static final Logger LOGGER = LogManager.getLogger(Director.class);
 
     public Department createDepartment(String name){
-        logger.info("Department created");
+        LOGGER.info("Department created");
         return new Department(name);
     }
 

@@ -12,35 +12,35 @@ import org.example.shop.products.Category;
 import java.util.Objects;
 
 public class Receipt {
-    private static final Logger logger = LogManager.getLogger(Receipt.class);
+    private static final Logger LOGGER = LogManager.getLogger(Receipt.class);
     private final BankCard bankCard;
 
     public String createReceipt(Receipt receipt, OrderToHome orderToHome) throws UserStorageIsNullException {
-        logger.info("creating receipt");
+        LOGGER.info("creating receipt");
         return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + orderToHome.getCustomerBasketList() + ".\n" + "Total price is: " + orderToHome.totalPrice();
     }
 
     public String createReceipt(Receipt receipt, OrderToPostOffice orderToPostOffice) throws UserStorageIsNullException {
-        logger.info("creating receipt");
+        LOGGER.info("creating receipt");
         return receipt.bankCard.getUserName()+ " " + receipt.bankCard.getUserSurname() + " bought " + orderToPostOffice.getCustomerBasketList() + ".\n" + "Total price is: " + orderToPostOffice.totalPrice();
     }
 
     public Receipt(OrderToHome orderToHome, BankCard bankCard) throws NameAndSurnameNotMatchWithCardException {
         if(!orderToHome.getCustomerName().equals(bankCard.getUserName()) && !orderToHome.getCustomerSurname().equals(bankCard.getUserSurname())){
-            logger.error("Customer name not equals to bank card user name");
+            LOGGER.error("Customer name not equals to bank card user name");
             throw new NameAndSurnameNotMatchWithCardException("Enter valid Name and Surname");
         } else {
             this.bankCard = bankCard;
-            logger.error("Receipt to home created");
+            LOGGER.error("Receipt to home created");
         }
     }
 
     public Receipt(OrderToPostOffice orderToPostOffice, BankCard bankCard) throws NameAndSurnameNotMatchWithCardException {
         if(!orderToPostOffice.getCustomerName().equals(bankCard.getUserName()) && !orderToPostOffice.getCustomerSurname().equals(bankCard.getUserSurname())){
-            logger.error("Customer name not equals to bank card user name");
+            LOGGER.error("Customer name not equals to bank card user name");
             throw new NameAndSurnameNotMatchWithCardException("Enter valid Name and Surname");
         } else {
-            logger.error("Receipt to post office created");
+            LOGGER.error("Receipt to post office created");
             this.bankCard = bankCard;
         }
     }

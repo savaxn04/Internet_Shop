@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class Basket implements ITotalProductsPrice {
-    private static final Logger logger = LogManager.getLogger(Basket.class);
+    private static final Logger LOGGER = LogManager.getLogger(Basket.class);
     private List<Product> basket;
 
     public void addProduct(Product product){
         basket.add(product);
-        logger.info("product added to basket");
+        LOGGER.info("product added to basket");
     }
 
     @Override

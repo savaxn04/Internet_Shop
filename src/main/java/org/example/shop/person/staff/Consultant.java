@@ -9,7 +9,7 @@ import org.example.shop.products.Category;
 import org.example.shop.products.Product;
 
 public class Consultant extends Person implements IEmployeeCheckProductInCategory {
-    private static final Logger logger = LogManager.getLogger(Consultant.class);
+    private static final Logger LOGGER = LogManager.getLogger(Consultant.class);
     private String department;
 
     public Consultant() {
@@ -30,7 +30,7 @@ public class Consultant extends Person implements IEmployeeCheckProductInCategor
 
     @Override
     public boolean checkProductInCategory(Product product, Category category) {
-        logger.info("Check product in category by consultant");
+        LOGGER.info("Check product in category by consultant");
         return category.getCategory().contains(product);
     }
 }

@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class Shop {
-    private static final Logger logger = LogManager.getLogger(Shop.class);
+    private static final Logger LOGGER = LogManager.getLogger(Shop.class);
     private String name;
     private String type;
 
     public List<Department> getDepartments(List<Department> departments){
-        logger.info("get departments");
+        LOGGER.info("get departments");
         return departments;
     }
 
@@ -26,7 +26,7 @@ public class Shop {
     public Shop(String name, String type) {
         this.name = name;
         this.type = type;
-        logger.info("shop created");
+        LOGGER.info("shop created");
     }
 
     public String getName() {

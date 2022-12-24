@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Objects;
 
 public abstract class Product {
-    private static final Logger logger = LogManager.getLogger(Product.class);
+    private static final Logger LOGGER = LogManager.getLogger(Product.class);
     private String name;
     private double price;
     private int count;
@@ -30,7 +30,7 @@ public abstract class Product {
             this.count = count;
         }
         this.description = description;
-        logger.info("Product created");
+        LOGGER.info("Product created");
     }
 
     public String getName() {

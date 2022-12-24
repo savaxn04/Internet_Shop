@@ -8,17 +8,17 @@ import org.example.shop.person.userTypes.Customer;
 import org.example.shop.person.userTypes.Seller;
 
 public class main {
-    private static final Logger logger = LogManager.getLogger(main.class);
+    private static final Logger LOGGER = LogManager.getLogger(main.class);
 
     public static void main(String args[]){
         Customer firstUser = new Customer();
         Seller seller = new Seller("Dmytro", "Savchenko");
-        logger.info(seller.toString());
-        logger.trace("We've just greeted the user!");
-        logger.debug("We've just greeted the user!");
-        logger.info("We've just greeted the user!");
-        logger.warn("We've just greeted the user!");
-        logger.error("We've just greeted the user!");
-        logger.fatal("We've just greeted the user!");
+        LOGGER.info(seller.toString());
+        LOGGER.trace("We've just greeted the user!");
+        LOGGER.debug("We've just greeted the user!");
+        LOGGER.info("We've just greeted the user!");
+        LOGGER.warn("We've just greeted the user!");
+        LOGGER.error("We've just greeted the user!");
+        LOGGER.fatal("We've just greeted the user!");
     }
 }

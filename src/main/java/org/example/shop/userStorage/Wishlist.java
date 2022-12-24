@@ -11,16 +11,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class Wishlist implements ITotalProductsPrice {
-    private static final Logger logger = LogManager.getLogger(Wishlist.class);
+    private static final Logger LOGGER = LogManager.getLogger(Wishlist.class);
     private List<Product> wishlist;
 
     public void addProduct(Product product){
-        logger.info("Product added to wishlist");
+        LOGGER.info("Product added to wishlist");
         wishlist.add(product);
     }
 
     public void addProductToBasket(Basket basket,Product product){
-        logger.info("Product from basket added to wishlist");
+        LOGGER.info("Product from basket added to wishlist");
         basket.addProduct(product);
     }
 

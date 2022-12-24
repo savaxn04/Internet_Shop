@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Seller extends User {
-    private static final Logger logger = LogManager.getLogger(Seller.class);
+    private static final Logger LOGGER = LogManager.getLogger(Seller.class);
 
     private List<Product> sellerProducts;
 
@@ -21,7 +21,7 @@ public class Seller extends User {
             sellerProducts.get(sellerProducts.indexOf(product)).setCount(sellerProducts.get(sellerProducts.indexOf(product)).getCount() + 1);
         }
         else{
-            logger.error("Seller added product");
+            LOGGER.error("Seller added product");
             sellerProducts.add(product);
         }
     }
@@ -31,7 +31,7 @@ public class Seller extends User {
             sellerProducts.get(sellerProducts.indexOf(product)).setCount(sellerProducts.get(sellerProducts.indexOf(product)).getCount() - 1);
         }
         else{
-            logger.error("Seller don't have this product");
+            LOGGER.error("Seller don't have this product");
             throw new SellerDontHaveProductInSelletProductsException("Seller don't have this product");
         }
     }

@@ -8,7 +8,7 @@ import org.example.enums.user.UserStatus;
 import java.util.Objects;
 
 public class Customer extends User{
-    private static final Logger logger = LogManager.getLogger(Customer.class);
+    private static final Logger LOGGER = LogManager.getLogger(Customer.class);
     private int age;
     private String city;
     private String street;
@@ -19,7 +19,7 @@ public class Customer extends User{
     private String question;
 
     public Customer() {
-        logger.info("Customer created");
+        LOGGER.info("Customer created");
     }
 
     public Customer(String name, String surname, int age, String city, String street, int houseNumber, int numberPostOffice, int postIndex, int phoneNumber) {
@@ -31,7 +31,7 @@ public class Customer extends User{
         this.numberPostOffice = numberPostOffice;
         this.postIndex = postIndex;
         this.phoneNumber = phoneNumber;
-        logger.info("Customer created");
+        LOGGER.info("Customer created");
     }
 
     public int getAge() {

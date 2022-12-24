@@ -10,7 +10,7 @@ import org.example.shop.userStorage.Basket;
 import java.util.Objects;
 
 public class OrderToPostOffice extends Order {
-    private static final Logger logger = LogManager.getLogger(OrderToPostOffice.class);
+    private static final Logger LOGGER = LogManager.getLogger(OrderToPostOffice.class);
     private int customerNumberPostOffice;
     private int customerPostIndex;
 
@@ -21,7 +21,7 @@ public class OrderToPostOffice extends Order {
         }
         this.customerNumberPostOffice = customer.getNumberPostOffice();
         this.customerPostIndex = customer.getPostIndex();
-        logger.info("Order to post office created");
+        LOGGER.info("Order to post office created");
     }
 
     public int getCustomerNumberPostOffice() {

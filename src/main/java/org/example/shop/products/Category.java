@@ -8,15 +8,15 @@ import java.util.List;
 import java.util.Objects;
 
 public class Category {
-    private static final Logger logger = LogManager.getLogger(Category.class);
+    private static final Logger LOGGER = LogManager.getLogger(Category.class);
     private List<Product> category;
     public void addProduct(Product product){
         category.add(product);
-        logger.info("Product added to product list");
+        LOGGER.info("Product added to product list");
     }
     public void removeProduct(Product product){
         category.remove(product);
-        logger.info("Product removed from product list");
+        LOGGER.info("Product removed from product list");
     }
 
     public Category() {
