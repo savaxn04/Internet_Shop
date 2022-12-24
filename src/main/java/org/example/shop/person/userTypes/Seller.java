@@ -1,6 +1,7 @@
 package org.example.shop.person.userTypes;
 
 import org.example.enums.Role;
+import org.example.enums.UserStatus;
 import org.example.shop.products.Product;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class Seller extends User {
     public Seller() {
     }
 
-    public Seller(String name, String surname, Role role, String status, List<Product> sellerProducts) {
+    public Seller(String name, String surname, Role role, UserStatus status, List<Product> sellerProducts) {
         super(name, surname, role, status);
         this.sellerProducts = sellerProducts;
     }
