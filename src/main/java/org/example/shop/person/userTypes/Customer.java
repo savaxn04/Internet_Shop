@@ -1,11 +1,15 @@
 package org.example.shop.person.userTypes;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.enums.Role;
 import org.example.enums.UserStatus;
+import org.example.main;
 
 import java.util.Objects;
 
 public class Customer extends User{
+    private static final Logger logger = LogManager.getLogger(Customer.class);
     private int age;
     private String city;
     private String street;
@@ -16,11 +20,11 @@ public class Customer extends User{
     private String question;
 
     public Customer() {
-
+        logger.info("Customer created");
     }
 
-    public Customer(String name, String surname, Role role, UserStatus status, int age, String city, String street, int houseNumber, int numberPostOffice, int postIndex, int phoneNumber) {
-        super(name, surname, role, status);
+    public Customer(String name, String surname, int age, String city, String street, int houseNumber, int numberPostOffice, int postIndex, int phoneNumber) {
+        super(name, surname, Role.CUSTOMER, UserStatus.NORMAL);
         this.age = age;
         this.city = city;
         this.street = street;
@@ -28,6 +32,7 @@ public class Customer extends User{
         this.numberPostOffice = numberPostOffice;
         this.postIndex = postIndex;
         this.phoneNumber = phoneNumber;
+        logger.info("Customer created");
     }
 
     public int getAge() {

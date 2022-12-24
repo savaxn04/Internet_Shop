@@ -1,14 +1,18 @@
 package org.example.shop.order;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.enums.UserStatus;
 import org.example.exceptions.UserBlockException;
 import org.example.interfaces.ITotalProductsPrice;
+import org.example.main;
 import org.example.shop.person.userTypes.Customer;
 import org.example.shop.userStorage.Basket;
 
 import java.util.Objects;
 
 public class OrderToHome extends Order implements ITotalProductsPrice {
+    private static final Logger logger = LogManager.getLogger(OrderToHome.class);
     private String customerStreet;
     private int customerHouseNumber;
 
@@ -19,6 +23,7 @@ public class OrderToHome extends Order implements ITotalProductsPrice {
         }
             this.customerStreet = customer.getStreet();
             this.customerHouseNumber = customer.getHouseNumber();
+        logger.info("Order to home created");
     }
 
     public String getCustomerStreet() {

@@ -16,7 +16,7 @@ public abstract class User extends Person {
     public User(String name, String surname, Role role, UserStatus status) {
         super(name, surname);
         this.role = role;
-        this.status = status;
+        this.status = UserStatus.NORMAL;
     }
 
     public Role getRole() {

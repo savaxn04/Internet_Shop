@@ -1,9 +1,14 @@
 package org.example.shop.person.staff;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.example.main;
+
 import java.util.List;
 import java.util.Objects;
 
 public class Department {
+    private static final Logger logger = LogManager.getLogger(Department.class);
     private final String name;
     private List<Manager> managerList;
     private List<Consultant> consultantList;
@@ -35,10 +40,12 @@ public class Department {
     }
 
     public void setConsultantManager(List<Consultant> consultantList) {
+        logger.info("Set manager list");
         this.consultantList = consultantList;
     }
 
     public void setManagerList(List<Manager> managerList) {
+        logger.info("Set manager list");
         this.managerList = managerList;
     }
 

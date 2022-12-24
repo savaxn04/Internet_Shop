@@ -1,8 +1,12 @@
 package org.example.shop.products;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public class Product {
+    private static final Logger logger = LogManager.getLogger(Product.class);
     private String name;
     private double price;
     private int count;
@@ -28,6 +32,7 @@ public class Product {
         }
         this.description = description;
         this.type = type;
+        logger.info("Product created");
     }
 
     public String getName() {

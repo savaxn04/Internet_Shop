@@ -1,40 +1,46 @@
 package org.example.shop.person.userTypes;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.enums.Role;
 import org.example.enums.UserStatus;
+import org.example.exceptions.SellerDontHaveProductInSelletProductsException;
 import org.example.shop.products.Product;
 
 import java.util.List;
 import java.util.Objects;
 
 public class Seller extends User {
+    private static final Logger logger = LogManager.getLogger(Seller.class);
 
     private List<Product> sellerProducts;
 
     public void addProducts(Product product){
         if(sellerProducts.contains(product)){
             product.setCount(product.getCount() + 1);
+            sellerProducts.get(sellerProducts.indexOf(product)).setCount(sellerProducts.get(sellerProducts.indexOf(product)).getCount() + 1);
         }
-        else {
+        else{
+            logger.error("Seller added product");
             sellerProducts.add(product);
         }
     }
 
     public void removeProducts(Product product){
         if(sellerProducts.contains(product)){
-            sellerProducts.remove(product);
+            sellerProducts.get(sellerProducts.indexOf(product)).setCount(sellerProducts.get(sellerProducts.indexOf(product)).getCount() - 1);
         }
-        else {
-            product.setCount(product.getCount() - 1);
+        else{
+            logger.error("Seller don't have this product");
+            throw new SellerDontHaveProductInSelletProductsException("Seller don't have this product");
         }
     }
 
     public Seller() {
     }
 
-    public Seller(String name, String surname, Role role, UserStatus status, List<Product> sellerProducts) {
-        super(name, surname, role, status);
-        this.sellerProducts = sellerProducts;
+    public Seller(String name, String surname) {
+        super(name, surname, Role.SELLER, UserStatus.NORMAL);
     }
 
     public List<Product> getSellerProducts() {

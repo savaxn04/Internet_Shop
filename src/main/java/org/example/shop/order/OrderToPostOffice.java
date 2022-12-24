@@ -1,8 +1,11 @@
 package org.example.shop.order;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.enums.UserStatus;
 import org.example.exceptions.UserBlockException;
 import org.example.exceptions.UserStorageIsNullException;
+import org.example.main;
 import org.example.shop.person.userTypes.Customer;
 import org.example.shop.products.Product;
 import org.example.shop.userStorage.Basket;
@@ -10,6 +13,7 @@ import org.example.shop.userStorage.Basket;
 import java.util.Objects;
 
 public class OrderToPostOffice extends Order {
+    private static final Logger logger = LogManager.getLogger(OrderToPostOffice.class);
     private int customerNumberPostOffice;
     private int customerPostIndex;
 
@@ -20,6 +24,7 @@ public class OrderToPostOffice extends Order {
         }
         this.customerNumberPostOffice = customer.getNumberPostOffice();
         this.customerPostIndex = customer.getPostIndex();
+        logger.info("Order to post office created");
     }
 
     public int getCustomerNumberPostOffice() {

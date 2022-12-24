@@ -2,16 +2,21 @@ package org.example.shop;
 
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.shop.person.staff.Department;
+import org.example.shop.products.Category;
 
 import java.util.List;
 import java.util.Objects;
 
 public class Shop {
+    private static final Logger logger = LogManager.getLogger(Shop.class);
     private String name;
     private String type;
 
     public List<Department> getDepartments(List<Department> departments){
+        logger.info("get departments");
         return departments;
     }
 
@@ -21,6 +26,7 @@ public class Shop {
     public Shop(String name, String type) {
         this.name = name;
         this.type = type;
+        logger.info("shop created");
     }
 
     public String getName() {

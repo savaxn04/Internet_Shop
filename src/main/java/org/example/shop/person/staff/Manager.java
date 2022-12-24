@@ -1,11 +1,15 @@
 package org.example.shop.person.staff;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.interfaces.IEmployeeCheckProductInCategory;
+import org.example.main;
 import org.example.shop.person.Person;
 import org.example.shop.products.Category;
 import org.example.shop.products.Product;
 
 public class Manager extends Person implements IEmployeeCheckProductInCategory {
+    private static final Logger logger = LogManager.getLogger(Manager.class);
 
     private String department;
 
@@ -27,6 +31,7 @@ public class Manager extends Person implements IEmployeeCheckProductInCategory {
 
     @Override
     public boolean checkProductInCategory(Product product, Category category) {
+        logger.info("Check product in category by manager");
         return category.getCategory().contains((Product)product);
     }
 }
