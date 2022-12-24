@@ -1,4 +1,4 @@
-package org.example.enums;
+package org.example.enums.user;
 
 public enum UserStatus {
     NORMAL(0), BLOCK(1);

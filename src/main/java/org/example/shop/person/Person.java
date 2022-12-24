@@ -1,7 +1,5 @@
 package org.example.shop.person;
 
-import org.example.enums.Role;
-
 import java.util.Objects;
 
 public abstract class Person {

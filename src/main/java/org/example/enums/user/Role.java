@@ -1,4 +1,4 @@
-package org.example.enums;
+package org.example.enums.user;
 
 public enum Role {
     CUSTOMER(1), SELLER(2),  ADMIN(3);

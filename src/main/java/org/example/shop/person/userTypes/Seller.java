@@ -2,8 +2,8 @@ package org.example.shop.person.userTypes;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.enums.Role;
-import org.example.enums.UserStatus;
+import org.example.enums.user.Role;
+import org.example.enums.user.UserStatus;
 import org.example.exceptions.SellerDontHaveProductInSelletProductsException;
 import org.example.shop.products.Product;
 

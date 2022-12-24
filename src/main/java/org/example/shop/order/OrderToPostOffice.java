@@ -2,12 +2,9 @@ package org.example.shop.order;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.enums.UserStatus;
+import org.example.enums.user.UserStatus;
 import org.example.exceptions.UserBlockException;
-import org.example.exceptions.UserStorageIsNullException;
-import org.example.main;
 import org.example.shop.person.userTypes.Customer;
-import org.example.shop.products.Product;
 import org.example.shop.userStorage.Basket;
 
 import java.util.Objects;

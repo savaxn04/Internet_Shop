@@ -2,12 +2,11 @@ package org.example.shop.person.userTypes;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.enums.Role;
-import org.example.enums.UserStatus;
+import org.example.enums.user.Role;
+import org.example.enums.user.UserStatus;
 import org.example.exceptions.ChangeAdministratorStatusException;
 import org.example.exceptions.UserAlreadyHasNotBlockedStatusException;
 import org.example.exceptions.UserIsAlreadyBlockedException;
-import org.example.main;
 
 public class Admin extends User {
     private static final Logger logger = LogManager.getLogger(Admin.class);

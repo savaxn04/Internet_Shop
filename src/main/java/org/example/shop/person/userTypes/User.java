@@ -1,7 +1,7 @@
 package org.example.shop.person.userTypes;
 
-import org.example.enums.Role;
-import org.example.enums.UserStatus;
+import org.example.enums.user.Role;
+import org.example.enums.user.UserStatus;
 import org.example.shop.person.Person;
 
 import java.util.Objects;
