@@ -3,20 +3,27 @@ package org.example.shop.userStorage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.exceptions.UserStorageIsNullException;
+import org.example.interfaces.IActionWithProductInStorage;
 import org.example.interfaces.ITotalProductsPrice;
-import org.example.shop.products.Category;
 import org.example.shop.products.Product;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Wishlist implements ITotalProductsPrice {
+public class Wishlist implements ITotalProductsPrice, IActionWithProductInStorage {
     private static final Logger LOGGER = LogManager.getLogger(Wishlist.class);
     private List<Product> wishlist;
 
+    @Override
     public void addProduct(Product product){
-        LOGGER.info("Product added to wishlist");
         wishlist.add(product);
+        LOGGER.info("product added to basket");
+    }
+
+    @Override
+    public void removeProduct(Product product){
+        wishlist.remove(product);
+        LOGGER.info("Product removed from product list");
     }
 
     public void addProductToBasket(Basket basket,Product product){

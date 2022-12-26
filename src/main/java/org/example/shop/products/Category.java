@@ -2,18 +2,22 @@ package org.example.shop.products;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.shop.person.userTypes.Seller;
+import org.example.interfaces.IActionWithProductInStorage;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Category {
+public class Category implements IActionWithProductInStorage {
     private static final Logger LOGGER = LogManager.getLogger(Category.class);
     private List<Product> category;
+
+    @Override
     public void addProduct(Product product){
         category.add(product);
         LOGGER.info("Product added to product list");
     }
+
+    @Override
     public void removeProduct(Product product){
         category.remove(product);
         LOGGER.info("Product removed from product list");

@@ -4,6 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.enums.user.Role;
 import org.example.enums.user.UserStatus;
+import org.example.shop.bankCard.BankCard;
+import org.example.shop.order.OrderToHome;
+import org.example.shop.receipt.Receipt;
+import org.example.shop.userStorage.Basket;
 
 import java.util.Objects;
 
@@ -17,6 +21,12 @@ public class Customer extends User{
     private int postIndex;
     private int phoneNumber;
     private String question;
+
+    public String makePurchase(Receipt receipt, OrderToHome orderToHome, BankCard bankCard){
+        receipt.createReceipt(receipt, orderToHome);
+        bankCard.makePayment(orderToHome);
+        return "Successful payment";
+    }
 
     public Customer() {
         LOGGER.info("Customer created");
