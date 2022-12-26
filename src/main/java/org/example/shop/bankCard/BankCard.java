@@ -13,7 +13,8 @@ public class BankCard {
     private String userName;
     private String userSurname;
     private long cardNumber;
-    private String yearMonth;
+    private int year;
+    private int month;
     private int cvv;
     private double money;
 
@@ -28,11 +29,12 @@ public class BankCard {
 
     }
 
-    public BankCard(String userName, String userSurname, long cardNumber, String yearMonth, int cvv, double money) {
+    public BankCard(String userName, String userSurname, long cardNumber, int year, int month, int cvv, double money) {
         this.userName = userName;
         this.userSurname = userSurname;
         this.cardNumber = cardNumber;
-        this.yearMonth = String.valueOf(YearMonth.parse(yearMonth, DateTimeFormatter.ofPattern("MMyy").withZone(ZoneId.of("UTC"))));
+        this.year = year;
+        this.month = month;
         this.cvv = cvv;
         this.money = money;
     }
@@ -61,12 +63,20 @@ public class BankCard {
         this.cardNumber = cardNumber;
     }
 
-    public String getYearMonth() {
-        return yearMonth;
+    public int getYear() {
+        return year;
     }
 
-    public void setYearMonth(String yearMonth) {
-        this.yearMonth = String.valueOf(YearMonth.parse(yearMonth, DateTimeFormatter.ofPattern("MMyy").withZone(ZoneId.of("UTC"))));
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
     }
 
     public int getCvv() {
@@ -84,12 +94,12 @@ public class BankCard {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof BankCard bankCard)) return false;
-        return cardNumber == bankCard.cardNumber && cvv == bankCard.cvv && Double.compare(bankCard.money, money) == 0 && userName.equals(bankCard.userName) && userSurname.equals(bankCard.userSurname) && yearMonth.equals(bankCard.yearMonth);
+        return cardNumber == bankCard.cardNumber && cvv == bankCard.cvv && Double.compare(bankCard.money, money) == 0 && userName.equals(bankCard.userName) && userSurname.equals(bankCard.userSurname) && year == bankCard.year && month == bankCard.month;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, userSurname, cardNumber, yearMonth, cvv, money);
+        return Objects.hash(userName, userSurname, cardNumber, year, month, cvv, money);
     }
 
     @Override
@@ -98,7 +108,8 @@ public class BankCard {
                 "userName='" + userName + '\'' +
                 ", userSurname='" + userSurname + '\'' +
                 ", cardNumber=" + cardNumber +
-                ", yearMonth='" + yearMonth + '\'' +
+                ", year='" + year + '\'' +
+                ", month='" + month +
                 ", cvv=" + cvv +
                 ", money=" + money +
                 '}';
