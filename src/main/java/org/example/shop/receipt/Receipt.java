@@ -30,7 +30,7 @@ public class Receipt {
             throw new NameAndSurnameNotMatchWithCardException("Enter valid Name and Surname");
         } else {
             this.bankCard = bankCard;
-            LOGGER.error("Receipt to home created");
+            LOGGER.info("Receipt to home created");
         }
     }
 
@@ -39,7 +39,7 @@ public class Receipt {
             LOGGER.error("Customer name not equals to bank card user name");
             throw new NameAndSurnameNotMatchWithCardException("Enter valid Name and Surname");
         } else {
-            LOGGER.error("Receipt to post office created");
+            LOGGER.info("Receipt to post office created");
             this.bankCard = bankCard;
         }
     }
