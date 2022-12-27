@@ -17,12 +17,11 @@ public abstract class Order implements ITotalProductsPrice  {
     private Basket customerBasketList;
 
     @Override
-    public double totalPrice() throws UserStorageIsNullException {
-        double totalPrice = 0;
-        for (Product product : getCustomerBasketList().getBasket()) {
-            totalPrice += product.getPrice();
-        }
-        return totalPrice;
+    public Double totalPrice() throws UserStorageIsNullException {
+        return getCustomerBasketList().getBasket()
+                .stream()
+                .mapToDouble(Product::getPrice)
+                .sum();
     }
 
     public Order() {

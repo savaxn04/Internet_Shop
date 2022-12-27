@@ -32,12 +32,11 @@ public class Wishlist implements ITotalProductsPrice, IActionWithProductInStorag
     }
 
     @Override
-    public double totalPrice(){
-        double totalPrice = 0;
-        for (Product product : wishlist) {
-            totalPrice += product.getPrice();
-        }
-        return totalPrice;
+    public Double totalPrice(){
+        return wishlist
+                .stream()
+                .mapToDouble(Product::getPrice)
+                .sum();
     }
 
     public Wishlist() {

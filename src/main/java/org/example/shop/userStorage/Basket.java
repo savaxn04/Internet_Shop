@@ -27,12 +27,11 @@ public class Basket implements ITotalProductsPrice, IActionWithProductInStorage 
     }
 
     @Override
-    public double totalPrice(){
-        double totalPrice = 0;
-        for (Product product : basket) {
-            totalPrice += product.getPrice();
-        }
-        return totalPrice;
+    public Double totalPrice(){
+        return basket
+                .stream()
+                .mapToDouble(Product::getPrice)
+                .sum();
     }
 
     public Basket() {
