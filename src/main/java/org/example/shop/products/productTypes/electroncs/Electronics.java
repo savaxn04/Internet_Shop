@@ -23,6 +23,7 @@ public class Electronics extends Product {
         this.electronicsMaterials = electronicsMaterials;
     }
 
+    @Override
     public ProductType getType() {
         return type;
     }

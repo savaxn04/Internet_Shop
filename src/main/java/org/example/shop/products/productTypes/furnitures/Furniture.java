@@ -17,6 +17,7 @@ public class Furniture extends Product {
         this.material = material;
     }
 
+    @Override
     public ProductType getType() {
         return type;
     }

@@ -2,17 +2,40 @@ package org.example.shop.userStorage;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.example.enums.product.ProductType;
 import org.example.exceptions.UserStorageIsNullException;
 import org.example.interfaces.IActionWithProductInStorage;
+import org.example.interfaces.IChooseAllProductsWithFilter;
 import org.example.interfaces.ITotalProductsPrice;
 import org.example.shop.products.Product;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Wishlist implements ITotalProductsPrice, IActionWithProductInStorage {
+public class Wishlist implements ITotalProductsPrice, IActionWithProductInStorage, IChooseAllProductsWithFilter {
     private static final Logger LOGGER = LogManager.getLogger(Wishlist.class);
     private List<Product> wishlist;
+
+    @Override
+    public List<Product> chooseOnlyClothes() {
+        return wishlist
+                .stream()
+                .filter(product -> product.getType() == ProductType.CLOTHES).toList();
+    }
+
+    @Override
+    public List<Product> chooseOnlyElectronics() {
+        return wishlist
+                .stream()
+                .filter(product -> product.getType() == ProductType.ELECTRONICS).toList();
+    }
+
+    @Override
+    public List<Product> chooseOnlyFurniture() {
+        return wishlist
+                .stream()
+                .filter(product -> product.getType() == ProductType.FURNITURE).toList();
+    }
 
     @Override
     public void addProduct(Product product){

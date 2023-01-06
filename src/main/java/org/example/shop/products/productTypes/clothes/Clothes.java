@@ -16,6 +16,7 @@ public class Clothes extends Product{
         this.size = size;
     }
 
+    @Override
     public ProductType getType() {
         return type;
     }
