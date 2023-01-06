@@ -7,6 +7,7 @@ import org.example.exceptions.UserStorageIsNullException;
 import org.example.exceptions.NameAndSurnameNotMatchWithCardException;
 import org.example.shop.order.OrderToHome;
 import org.example.shop.order.OrderToPostOffice;
+import org.example.shop.person.userTypes.Customer;
 
 import java.util.Objects;
 

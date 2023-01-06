@@ -5,33 +5,52 @@ import org.apache.logging.log4j.Logger;
 import org.example.enums.product.ProductType;
 import org.example.exceptions.UserStorageIsNullException;
 import org.example.interfaces.IActionWithProductInStorage;
-import org.example.interfaces.IChooseAllProductsWithFilter;
+import org.example.interfaces.IGetAllProductsWithTypeFilter;
+import org.example.interfaces.IGetProductsWithMinOrMaxPrice;
 import org.example.interfaces.ITotalProductsPrice;
 import org.example.shop.products.Product;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Wishlist implements ITotalProductsPrice, IActionWithProductInStorage, IChooseAllProductsWithFilter {
+public class Wishlist implements ITotalProductsPrice, IActionWithProductInStorage, IGetAllProductsWithTypeFilter, IGetProductsWithMinOrMaxPrice {
     private static final Logger LOGGER = LogManager.getLogger(Wishlist.class);
     private List<Product> wishlist;
 
     @Override
-    public List<Product> chooseOnlyClothes() {
+    public List<Product> getProductsWithMinPrice() {
+        double mixPrice = wishlist
+                .stream()
+                .mapToDouble(Product::getPrice)
+                .min().orElse(-1);
+        return wishlist.stream().filter(product -> product.getPrice() == mixPrice).toList();
+    }
+
+    @Override
+    public List<Product> getProductsWithMaxPrice() {
+        double maxPrice = wishlist
+                .stream()
+                .mapToDouble(Product::getPrice)
+                .max().orElse(-1);
+        return wishlist.stream().filter(product -> product.getPrice() == maxPrice).toList();
+    }
+
+    @Override
+    public List<Product> getOnlyClothes() {
         return wishlist
                 .stream()
                 .filter(product -> product.getType() == ProductType.CLOTHES).toList();
     }
 
     @Override
-    public List<Product> chooseOnlyElectronics() {
+    public List<Product> getOnlyElectronics() {
         return wishlist
                 .stream()
                 .filter(product -> product.getType() == ProductType.ELECTRONICS).toList();
     }
 
     @Override
-    public List<Product> chooseOnlyFurniture() {
+    public List<Product> getOnlyFurniture() {
         return wishlist
                 .stream()
                 .filter(product -> product.getType() == ProductType.FURNITURE).toList();
