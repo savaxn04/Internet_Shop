@@ -14,20 +14,20 @@ public class Reflection {
 
     public static void showReflection() throws ReflectionException {
         try {
-            Class<?> c = Class.forName("org.example.entity.person.userTypes.Customer");
-            Constructor<?>[] constructor = c.getConstructors();
-            Field[] fields = c.getDeclaredFields();
-            Method[] methods = c.getMethods();
+            Class<?> reflectionClass = Class.forName("org.example.entity.person.userTypes.Customer");
+            Constructor<?>[] constructor = reflectionClass.getConstructors();
+            Field[] fields = reflectionClass.getDeclaredFields();
+            Method[] methods = reflectionClass.getMethods();
             Arrays.stream(fields).toList().forEach(LOGGER::info);
             System.out.println();
             Arrays.stream(constructor).toList().forEach(LOGGER::info);
             System.out.println();
             Arrays.stream(methods).toList().forEach(LOGGER::info);
-            Class<?> cSuperclass = c.getSuperclass();
+            Class<?> cSuperclass = reflectionClass.getSuperclass();
             System.out.println();
             LOGGER.info(cSuperclass.getName());
-            Object v = c.getConstructor().newInstance();
-            LOGGER.info(v);
+            Object reflectionObject = reflectionClass.getConstructor().newInstance();
+            LOGGER.info(reflectionObject);
         } catch (Exception e) {
             LOGGER.error(e);
             throw new ReflectionException();
