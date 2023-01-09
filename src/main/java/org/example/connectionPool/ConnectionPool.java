@@ -6,11 +6,11 @@ import java.util.Set;
 import java.util.Stack;
 
 public class ConnectionPool {
-    private final String databaseUrl;
-    private final String userName;
-    private final String password;
+    public final String databaseUrl;
+    public final String userName;
+    public final String password;
 
-    private int maxPoolSize = 10;
+    private int maxPoolSize = 5;
     private int connectionNumber = 0;
 
     private static final String SQL_VERIFIATION = "select 1";
@@ -97,5 +97,17 @@ public class ConnectionPool {
         catch (SQLException e){
             return false;
         }
+    }
+
+    public String getDatabaseUrl() {
+        return databaseUrl;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

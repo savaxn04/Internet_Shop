@@ -2,9 +2,9 @@ package org.example.entity;
 
 
 
+import org.example.entity.person.staff.Department;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.entity.person.staff.Department;
 
 import java.util.List;
 import java.util.Objects;

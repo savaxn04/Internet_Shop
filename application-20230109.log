@@ -1,14 +1,89 @@
-2023-01-09 15:20:44.880 [main] INFO  org.example.entity.person.userTypes.Customer - Customer created
-2023-01-09 15:20:44.894 [main] INFO  org.example.entity.products.Product - Product created
-2023-01-09 15:20:44.897 [main] INFO  org.example.main - 42000.0
-2023-01-09 15:20:44.932 [main] INFO  org.example.main - 42000.0
-2023-01-09 15:20:44.937 [main] INFO  org.example.entity.order.OrderToHome - Order to home created
-2023-01-09 15:20:44.940 [main] INFO  org.example.entity.receipt.Receipt - Receipt to home created
-2023-01-09 15:20:44.940 [main] INFO  org.example.main - 100000.0
-2023-01-09 15:20:44.940 [main] INFO  org.example.entity.receipt.Receipt - creating receipt
-2023-01-09 15:20:44.950 [main] INFO  org.example.main - Dmytro Savchenko bought Basket{basket=[Electronics{type=ELECTRONICS, memoryCapacity=FIVE_HUNDRED_TWELVE, operatingMemory=SIXTEEN, electronicsMaterials=PLASTIC}]}.
+2023-01-09 15:20:44.880 [main] INFO  org.userTypes.person.entity.Customer - Customer created
+2023-01-09 15:20:44.894 [main] INFO  org.products.entity.Product - Product created
+2023-01-09 15:20:44.897 [main] INFO  org.main - 42000.0
+2023-01-09 15:20:44.932 [main] INFO  org.main - 42000.0
+2023-01-09 15:20:44.937 [main] INFO  org.order.entity.OrderToHome - Order to home created
+2023-01-09 15:20:44.940 [main] INFO  org.receipt.entity.Receipt - Receipt to home created
+2023-01-09 15:20:44.940 [main] INFO  org.main - 100000.0
+2023-01-09 15:20:44.940 [main] INFO  org.receipt.entity.Receipt - creating receipt
+2023-01-09 15:20:44.950 [main] INFO  org.main - Dmytro Savchenko bought Basket{basket=[Electronics{type=ELECTRONICS, memoryCapacity=FIVE_HUNDRED_TWELVE, operatingMemory=SIXTEEN, electronicsMaterials=PLASTIC}]}.
 Total price is: 42000.0
-2023-01-09 15:20:44.950 [main] INFO  org.example.entity.receipt.Receipt - creating receipt
-2023-01-09 15:20:44.951 [main] INFO  org.example.main - Successful payment
-2023-01-09 15:20:44.951 [main] INFO  org.example.main - 58000.0
-2023-01-09 18:00:48.823 [main] INFO  org.example.entity.person.userTypes.Customer - Customer created
+2023-01-09 15:20:44.950 [main] INFO  org.receipt.entity.Receipt - creating receipt
+2023-01-09 15:20:44.951 [main] INFO  org.main - Successful payment
+2023-01-09 15:20:44.951 [main] INFO  org.main - 58000.0
+2023-01-09 18:00:48.823 [main] INFO  org.userTypes.person.entity.Customer - Customer created
+2023-01-09 19:09:10.658 [main] INFO  org.userTypes.person.entity.Customer - Customer created
+2023-01-09 19:09:10.668 [main] INFO  org.products.entity.Product - Product created
+2023-01-09 19:09:10.672 [main] INFO  org.main - 42000.0
+2023-01-09 19:09:10.686 [main] INFO  org.main - 42000.0
+2023-01-09 19:09:10.692 [main] INFO  org.order.entity.OrderToHome - Order to home created
+2023-01-09 19:09:10.694 [main] INFO  org.receipt.entity.Receipt - Receipt to home created
+2023-01-09 19:09:10.696 [main] INFO  org.main - 100000.0
+2023-01-09 19:09:10.696 [main] INFO  org.receipt.entity.Receipt - creating receipt
+2023-01-09 19:09:10.705 [main] INFO  org.main - Dmytro Savchenko bought Basket{basket=[Electronics{type=ELECTRONICS, memoryCapacity=FIVE_HUNDRED_TWELVE, operatingMemory=SIXTEEN, electronicsMaterials=PLASTIC}]}.
+Total price is: 42000.0
+2023-01-09 19:09:10.706 [main] INFO  org.receipt.entity.Receipt - creating receipt
+2023-01-09 19:09:10.706 [main] INFO  org.main - Successful payment
+2023-01-09 19:10:57.290 [main] ERROR org.reflection.Reflection - java.lang.ClassNotFoundException: org.example.entity.person.Customer
+2023-01-09 19:12:47.264 [main] ERROR org.reflection.Reflection - java.lang.ClassNotFoundException: Customer
+2023-01-09 19:16:52.361 [main] ERROR org.example.reflection.Reflection - java.lang.ClassNotFoundException: org.entity.person.Customer
+2023-01-09 19:17:33.726 [main] INFO  org.example.reflection.Reflection - private static final org.apache.logging.log4j.Logger org.example.entity.person.userTypes.Customer.LOGGER
+2023-01-09 19:17:33.731 [main] INFO  org.example.reflection.Reflection - private int org.example.entity.person.userTypes.Customer.age
+2023-01-09 19:17:33.732 [main] INFO  org.example.reflection.Reflection - private java.lang.String org.example.entity.person.userTypes.Customer.city
+2023-01-09 19:17:33.732 [main] INFO  org.example.reflection.Reflection - private java.lang.String org.example.entity.person.userTypes.Customer.street
+2023-01-09 19:17:33.732 [main] INFO  org.example.reflection.Reflection - private int org.example.entity.person.userTypes.Customer.houseNumber
+2023-01-09 19:17:33.733 [main] INFO  org.example.reflection.Reflection - private int org.example.entity.person.userTypes.Customer.numberPostOffice
+2023-01-09 19:17:33.733 [main] INFO  org.example.reflection.Reflection - private int org.example.entity.person.userTypes.Customer.postIndex
+2023-01-09 19:17:33.733 [main] INFO  org.example.reflection.Reflection - private int org.example.entity.person.userTypes.Customer.phoneNumber
+2023-01-09 19:17:33.733 [main] INFO  org.example.reflection.Reflection - private java.lang.String org.example.entity.person.userTypes.Customer.question
+2023-01-09 19:17:33.735 [main] INFO  org.example.reflection.Reflection - public org.example.entity.person.userTypes.Customer(java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,int,int,int,int)
+2023-01-09 19:17:33.735 [main] INFO  org.example.reflection.Reflection - public org.example.entity.person.userTypes.Customer()
+2023-01-09 19:17:33.736 [main] INFO  org.example.reflection.Reflection - public boolean org.example.entity.person.userTypes.Customer.equals(java.lang.Object)
+2023-01-09 19:17:33.737 [main] INFO  org.example.reflection.Reflection - public java.lang.String org.example.entity.person.userTypes.Customer.toString()
+2023-01-09 19:17:33.737 [main] INFO  org.example.reflection.Reflection - public int org.example.entity.person.userTypes.Customer.hashCode()
+2023-01-09 19:17:33.738 [main] INFO  org.example.reflection.Reflection - public java.lang.String org.example.entity.person.userTypes.Customer.makePurchase(org.example.entity.receipt.Receipt,org.example.entity.order.OrderToHome,org.example.entity.bankCard.BankCard)
+2023-01-09 19:17:33.738 [main] INFO  org.example.reflection.Reflection - public int org.example.entity.person.userTypes.Customer.getAge()
+2023-01-09 19:17:33.739 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setHouseNumber(int)
+2023-01-09 19:17:33.739 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setPostIndex(int)
+2023-01-09 19:17:33.739 [main] INFO  org.example.reflection.Reflection - public int org.example.entity.person.userTypes.Customer.getPhoneNumber()
+2023-01-09 19:17:33.740 [main] INFO  org.example.reflection.Reflection - public int org.example.entity.person.userTypes.Customer.getPostIndex()
+2023-01-09 19:17:33.740 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setCity(java.lang.String)
+2023-01-09 19:17:33.740 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setStreet(java.lang.String)
+2023-01-09 19:17:33.741 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setAge(int)
+2023-01-09 19:17:33.741 [main] INFO  org.example.reflection.Reflection - public java.lang.String org.example.entity.person.userTypes.Customer.getCity()
+2023-01-09 19:17:33.742 [main] INFO  org.example.reflection.Reflection - public int org.example.entity.person.userTypes.Customer.getHouseNumber()
+2023-01-09 19:17:33.742 [main] INFO  org.example.reflection.Reflection - public java.lang.String org.example.entity.person.userTypes.Customer.getStreet()
+2023-01-09 19:17:33.742 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setPhoneNumber(int)
+2023-01-09 19:17:33.743 [main] INFO  org.example.reflection.Reflection - public java.lang.String org.example.entity.person.userTypes.Customer.getQuestion()
+2023-01-09 19:17:33.744 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setQuestion(java.lang.String)
+2023-01-09 19:17:33.744 [main] INFO  org.example.reflection.Reflection - public int org.example.entity.person.userTypes.Customer.getNumberPostOffice()
+2023-01-09 19:17:33.745 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.Customer.setNumberPostOffice(int)
+2023-01-09 19:17:33.745 [main] INFO  org.example.reflection.Reflection - public org.example.enums.user.Role org.example.entity.person.userTypes.User.getRole()
+2023-01-09 19:17:33.746 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.User.setRole(org.example.enums.user.Role)
+2023-01-09 19:17:33.746 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.userTypes.User.setStatus(org.example.enums.user.UserStatus)
+2023-01-09 19:17:33.746 [main] INFO  org.example.reflection.Reflection - public org.example.enums.user.UserStatus org.example.entity.person.userTypes.User.getStatus()
+2023-01-09 19:17:33.747 [main] INFO  org.example.reflection.Reflection - public java.lang.String org.example.entity.person.Person.getName()
+2023-01-09 19:17:33.747 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.Person.setName(java.lang.String)
+2023-01-09 19:17:33.747 [main] INFO  org.example.reflection.Reflection - public void org.example.entity.person.Person.setSurname(java.lang.String)
+2023-01-09 19:17:33.749 [main] INFO  org.example.reflection.Reflection - public java.lang.String org.example.entity.person.Person.getSurname()
+2023-01-09 19:17:33.749 [main] INFO  org.example.reflection.Reflection - public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
+2023-01-09 19:17:33.750 [main] INFO  org.example.reflection.Reflection - public final void java.lang.Object.wait() throws java.lang.InterruptedException
+2023-01-09 19:17:33.750 [main] INFO  org.example.reflection.Reflection - public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException
+2023-01-09 19:17:33.751 [main] INFO  org.example.reflection.Reflection - public final native java.lang.Class java.lang.Object.getClass()
+2023-01-09 19:17:33.751 [main] INFO  org.example.reflection.Reflection - public final native void java.lang.Object.notify()
+2023-01-09 19:17:33.752 [main] INFO  org.example.reflection.Reflection - public final native void java.lang.Object.notifyAll()
+2023-01-09 19:17:33.753 [main] INFO  org.example.reflection.Reflection - org.example.entity.person.userTypes.User
+2023-01-09 19:17:33.753 [main] INFO  org.example.entity.person.userTypes.Customer - Customer created
+2023-01-09 19:17:33.775 [main] INFO  org.example.reflection.Reflection - Customer{User{Person{name='null', surname='null'}role=null, status='null'}age=0, city='null', street='null', houseNumber=0, numberPostOffice=0, postIndex=0, phoneNumber=0, question='null'}
+2023-01-09 19:17:33.776 [main] INFO  org.example.entity.person.userTypes.Customer - Customer created
+2023-01-09 19:17:33.783 [main] INFO  org.example.entity.products.Product - Product created
+2023-01-09 19:17:33.784 [main] INFO  org.example.main - 42000.0
+2023-01-09 19:17:33.797 [main] INFO  org.example.main - 42000.0
+2023-01-09 19:17:33.800 [main] INFO  org.example.entity.order.OrderToHome - Order to home created
+2023-01-09 19:17:33.801 [main] INFO  org.example.entity.receipt.Receipt - Receipt to home created
+2023-01-09 19:17:33.802 [main] INFO  org.example.main - 100000.0
+2023-01-09 19:17:33.802 [main] INFO  org.example.entity.receipt.Receipt - creating receipt
+2023-01-09 19:17:33.812 [main] INFO  org.example.main - Dmytro Savchenko bought Basket{basket=[Electronics{type=ELECTRONICS, memoryCapacity=FIVE_HUNDRED_TWELVE, operatingMemory=SIXTEEN, electronicsMaterials=PLASTIC}]}.
+Total price is: 42000.0
+2023-01-09 19:17:33.813 [main] INFO  org.example.entity.receipt.Receipt - creating receipt
+2023-01-09 19:17:33.813 [main] INFO  org.example.main - Successful payment

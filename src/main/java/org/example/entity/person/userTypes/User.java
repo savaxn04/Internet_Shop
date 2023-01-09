@@ -1,7 +1,7 @@
 package org.example.entity.person.userTypes;
 
-import org.example.enums.user.Role;
 import org.example.enums.user.UserStatus;
+import org.example.enums.user.Role;
 import org.example.entity.person.Person;
 
 import java.util.Objects;

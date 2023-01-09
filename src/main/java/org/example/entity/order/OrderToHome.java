@@ -1,12 +1,12 @@
 package org.example.entity.order;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.example.enums.user.UserStatus;
-import org.example.exceptions.UserBlockException;
-import org.example.interfaces.ITotalProductsPrice;
 import org.example.entity.person.userTypes.Customer;
 import org.example.entity.userStorage.Basket;
+import org.example.enums.user.UserStatus;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.example.exceptions.UserBlockException;
+import org.example.interfaces.ITotalProductsPrice;
 
 import java.util.Objects;
 

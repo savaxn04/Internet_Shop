@@ -1,10 +1,10 @@
 package org.example.entity.order;
 
-import org.example.exceptions.UserStorageIsNullException;
-import org.example.interfaces.ITotalProductsPrice;
 import org.example.entity.person.userTypes.Customer;
 import org.example.entity.products.Product;
 import org.example.entity.userStorage.Basket;
+import org.example.exceptions.UserStorageIsNullException;
+import org.example.interfaces.ITotalProductsPrice;
 
 import java.util.Objects;
 

@@ -1,11 +1,11 @@
 package org.example.entity.person.staff;
 
+import org.example.entity.products.Category;
+import org.example.entity.products.Product;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.interfaces.IEmployeeCheckProductInCategory;
 import org.example.entity.person.Person;
-import org.example.entity.products.Category;
-import org.example.entity.products.Product;
 
 public class Manager extends Person implements IEmployeeCheckProductInCategory {
     private static final Logger LOGGER = LogManager.getLogger(Manager.class);

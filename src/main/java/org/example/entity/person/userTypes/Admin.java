@@ -1,9 +1,9 @@
 package org.example.entity.person.userTypes;
 
+import org.example.enums.user.UserStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.enums.user.Role;
-import org.example.enums.user.UserStatus;
 import org.example.exceptions.ChangeAdministratorStatusException;
 import org.example.exceptions.UserAlreadyHasNotBlockedStatusException;
 import org.example.exceptions.UserIsAlreadyBlockedException;

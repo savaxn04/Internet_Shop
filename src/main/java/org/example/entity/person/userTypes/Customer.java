@@ -1,12 +1,12 @@
 package org.example.entity.person.userTypes;
 
+import org.example.entity.bankCard.BankCard;
+import org.example.entity.receipt.Receipt;
+import org.example.enums.user.UserStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.enums.user.Role;
-import org.example.enums.user.UserStatus;
-import org.example.entity.bankCard.BankCard;
 import org.example.entity.order.OrderToHome;
-import org.example.entity.receipt.Receipt;
 
 import java.util.Objects;
 
