@@ -1,0 +1,14 @@
+2023-01-09 15:20:44.880 [main] INFO  org.example.entity.person.userTypes.Customer - Customer created
+2023-01-09 15:20:44.894 [main] INFO  org.example.entity.products.Product - Product created
+2023-01-09 15:20:44.897 [main] INFO  org.example.main - 42000.0
+2023-01-09 15:20:44.932 [main] INFO  org.example.main - 42000.0
+2023-01-09 15:20:44.937 [main] INFO  org.example.entity.order.OrderToHome - Order to home created
+2023-01-09 15:20:44.940 [main] INFO  org.example.entity.receipt.Receipt - Receipt to home created
+2023-01-09 15:20:44.940 [main] INFO  org.example.main - 100000.0
+2023-01-09 15:20:44.940 [main] INFO  org.example.entity.receipt.Receipt - creating receipt
+2023-01-09 15:20:44.950 [main] INFO  org.example.main - Dmytro Savchenko bought Basket{basket=[Electronics{type=ELECTRONICS, memoryCapacity=FIVE_HUNDRED_TWELVE, operatingMemory=SIXTEEN, electronicsMaterials=PLASTIC}]}.
+Total price is: 42000.0
+2023-01-09 15:20:44.950 [main] INFO  org.example.entity.receipt.Receipt - creating receipt
+2023-01-09 15:20:44.951 [main] INFO  org.example.main - Successful payment
+2023-01-09 15:20:44.951 [main] INFO  org.example.main - 58000.0
+2023-01-09 18:00:48.823 [main] INFO  org.example.entity.person.userTypes.Customer - Customer created

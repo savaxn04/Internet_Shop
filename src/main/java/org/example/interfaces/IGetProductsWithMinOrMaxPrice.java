@@ -1,6 +1,6 @@
 package org.example.interfaces;
 
-import org.example.shop.products.Product;
+import org.example.entity.products.Product;
 
 import java.util.List;
 
