@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.connectionPool.examples.Deadlock;
 import org.example.entity.bankCard.BankCard;
 import org.example.entity.order.OrderToHome;
 import org.example.entity.person.userTypes.Customer;
@@ -21,6 +22,7 @@ public class main {
     private static final Logger LOGGER = LogManager.getLogger(main.class);
 
     public static void main(String args[]) throws ReflectionException {
+        Deadlock.lock();
         Reflection.showReflection();
         Customer firstUser = new Customer("Dmytro", "Savchenko", 18, "Kremenchuk", "Lesi Ukrayinky", 18, 14, 39622, 635575702);
         Electronics laptop = new Electronics("laptop", 42000, 1, "Laptop", MemoryCapacity.FIVE_HUNDRED_TWELVE, OperatingMemory.SIXTEEN, ElectronicsMaterials.PLASTIC);
