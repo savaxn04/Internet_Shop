@@ -23,9 +23,9 @@ public class Reflection {
             Arrays.stream(constructor).toList().forEach(LOGGER::info);
             System.out.println();
             Arrays.stream(methods).toList().forEach(LOGGER::info);
-            Class<?> cSuperclass = reflectionClass.getSuperclass();
+            Class<?> Superclass = reflectionClass.getSuperclass();
             System.out.println();
-            LOGGER.info(cSuperclass.getName());
+            LOGGER.info(Superclass.getName());
             Object reflectionObject = reflectionClass.getConstructor().newInstance();
             LOGGER.info(reflectionObject);
         } catch (Exception e) {

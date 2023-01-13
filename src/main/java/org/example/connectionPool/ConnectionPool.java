@@ -63,7 +63,7 @@ public class ConnectionPool {
     }
 
     private Connection creatNewConnection() throws SQLException{
-        Connection connection = null;
+        Connection connection;
         connection = DriverManager.getConnection(databaseUrl, userName, password);
         return connection;
     }
